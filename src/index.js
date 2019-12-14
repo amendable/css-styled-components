@@ -1,13 +1,14 @@
 import styled from 'styled-components'
+
 const defaultMatch = 'css'
 
-export default ({ colors = {}, match = defaultMatch }) => ({
+export default ({ match = defaultMatch } = {}) => ({
   match,
   resolve: ({
     key,
     value,
     props: {
-      component,
+      component = 'div',
     },
   }) => ({
     component: styled(component)(value)
