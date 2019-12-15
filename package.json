@@ -13,15 +13,18 @@
   },
   "repository": "amendable/css-styled-components",
   "devDependencies": {
+    "@amendable/prettier-config": "^1.0.0",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-test-renderer": "^16.12.0",
+    "rimraf": "^3.0.0",
     "styled-components": "^4.4.1"
   },
   "scripts": {
-    "build": "microbundle build --no-compress --external styled-components --globals styled-components=styled",
+    "build": "rimraf dist && microbundle build --no-compress --external styled-components --globals styled-components=styled",
     "watch": "microbundle watch --no-compress --external styled-components --globals styled-components=styled",
     "test": "jest"
   },
@@ -29,6 +32,7 @@
     "jest": "^24.9.0"
   },
   "peerDependencies": {
-    "styled-components": "*"
-  }
+    "styled-components": "4.x"
+  },
+  "prettier": "@amendable/prettier-config"
 }
